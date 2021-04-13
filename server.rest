@@ -1,0 +1,37 @@
+// Get all ice creams
+GET http://localhost:3000/api/ice-cream
+
+###
+
+// Get specific ice cream
+GET http://localhost:3000/api/ice-cream/2
+
+###
+
+// Add new ice cream
+POST http://localhost:3000/api/ice-cream
+Content-Type: application/json
+
+{
+    "name": "Twister",
+    "price": 12,
+    "description": "En riktig barnfavorit! Njut av en glass med flertalet populära fruktsmaker såsom ananas, citron och jordgubb."
+}
+
+###
+
+// Update existing ice cream
+PUT http://localhost:3000/api/ice-cream/2
+Content-Type: application/json
+
+{
+        "name": "Piggelin",
+        "price": 8,
+        "description": "Härligt läskande slush med smak av favoriten Piggelin!"
+}
+
+
+###
+
+// Delete ice cream
+DELETE http://localhost:3000/api/ice-cream/1
