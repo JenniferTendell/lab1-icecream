@@ -5,6 +5,9 @@ const data = fs.readFileSync('iceCreams.json');
 const iceCreams = JSON.parse(data)
 const PORT = 3000;
 
+
+app.use(express.static('public'));
+
 app.use(express.json());
 
 // ENDPOINTS
