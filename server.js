@@ -1,27 +1,9 @@
 const express = require('express');
 const app = express();
+const fs = require('fs');
+const data = fs.readFileSync('iceCreams.json');
+const iceCreams = JSON.parse(data)
 const PORT = 3000;
-
-const iceCreams = [
-    {
-        id: 1,
-        name: "Magnum Strawberry White",
-        price: 24,
-        description: "En perfekt kombination av sött och syrligt! Krämig jordgubbsglass med tunna strimmor av jordgubbssås – doppad i vit choklad."
-    },
-    {
-        id: 2,
-        name: "Solero Exotic",
-        price: 20,
-        description: "Solero Exotic är tillbaka! Len vaniljglass med en swirl och överdrag av exotiska frukter. Läskande god!"
-    },
-    {
-        id: 3,
-        name: "Sandwich",
-        price: 18,
-        description: "Sandwich kan man alltid lita på, en riktigt klassiker. Tiderna förändras, men inte den rena vaniljglassen mellan de goda chokladkexen."
-    },
-];
 
 app.use(express.json());
 
@@ -62,7 +44,9 @@ app.post('/api/ice-cream', (req, res) => {
         ...req.body
     });
 
-    res.status(201).json(req.body)
+    fs.writeFile('iceCreams.json', JSON.stringify(iceCreams, null, 2), () => {
+        res.status(201).json(req.body)
+    })
 });
 
 // Update existing ice cream
@@ -77,16 +61,29 @@ app.put('/api/ice-cream/:id', (req, res) => {
     
     iceCreams.splice(index, 1, updatedIceCream );
 
-    res.status(200).json(req.body);
+    fs.writeFile('iceCreams.json', JSON.stringify(iceCreams, null, 2), () => {
+        res.status(200).json(req.body);
+    })
 });
 
 // Delete ice cream
 app.delete('/api/ice-cream/:id', (req, res) => {
     const id = req.params.id;
     const index = iceCreams.findIndex(iceCream => iceCream.id == id);
+
+    /*
+    if(!id) {
+        res.status(200).json({'error': 'There is not an ice cream with this ID. Can not remove.'})
+        return
+    }
+    */
+
     const deletedIceCream = iceCreams.splice(index, 1);
+
+    fs.writeFile('iceCreams.json', JSON.stringify(iceCreams, null, 2), () => {
+        res.status(200).json(deletedIceCream)
+    })
     
-    res.status(200).json(deletedIceCream)
 });
 
 
