@@ -48,8 +48,6 @@ app.get('/api/ice-cream/:id', (req, res) => {
 
 // Add new ice cream
 app.post('/api/ice-cream', (req, res) => {
-    const iceCream = req.body
-
     let newId = 0
     iceCreams.forEach((iceCream) => {
         if(iceCream.id > newId) {
@@ -61,7 +59,7 @@ app.post('/api/ice-cream', (req, res) => {
 
     iceCreams.push({
         id: newId,
-        iceCream: iceCream,
+        ...req.body
     });
 
     res.status(201).json(req.body)
@@ -69,24 +67,26 @@ app.post('/api/ice-cream', (req, res) => {
 
 // Update existing ice cream
 app.put('/api/ice-cream/:id', (req, res) => {
-    const id = req.params.id
-    const index = iceCreams.findIndex(iceCream => iceCream.id === id);
+    const id = parseInt(req.params.id)
+    const index = iceCreams.findIndex(iceCream => iceCream.id == id);
+    
     const updatedIceCream = {
         id: id,
-        iceCream: req.body,
+        ...req.body
     };
-    iceCreams.splice(index, 1, ...updatedIceCream );
+    
+    iceCreams.splice(index, 1, updatedIceCream );
 
-    res.status(204).json(null);
+    res.status(200).json(req.body);
 });
 
 // Delete ice cream
 app.delete('/api/ice-cream/:id', (req, res) => {
     const id = req.params.id;
-    const index = iceCreams.findIndex(iceCream => iceCream.id === id);
-    iceCreams.splice(index, 1);
+    const index = iceCreams.findIndex(iceCream => iceCream.id == id);
+    const deletedIceCream = iceCreams.splice(index, 1);
     
-    res.status(204).json(null)
+    res.status(200).json(deletedIceCream)
 });
 
 
