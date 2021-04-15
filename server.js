@@ -6,11 +6,9 @@ const iceCreams = JSON.parse(data)
 const PORT = 3000;
 
 
+app.use(express.json());
 app.use(express.static('public'));
 
-app.use(express.json());
-
-// ENDPOINTS
 // Get all ice creams
 app.get('/api/ice-cream', (req, res) => {
     res.status(200).json(iceCreams);
@@ -20,15 +18,15 @@ app.get('/api/ice-cream', (req, res) => {
 app.get('/api/ice-cream/:id', (req, res) => {
     const id = req.params.id;
 
-    const findSpecificIceCream = iceCreams.find((iceCream) => {
+    const specificIceCream = iceCreams.find((iceCream) => {
         return iceCream.id == id
     });
 
-    if(!findSpecificIceCream) {
+    if(!specificIceCream) {
         res.status(404).json({'error': 'Oups... Detta id finns inte.'})
     };
 
-    res.status(200).json(findSpecificIceCream)
+    res.status(200).json(specificIceCream)
 });
 
 // Add new ice cream
@@ -57,9 +55,13 @@ app.put('/api/ice-cream/:id', (req, res) => {
     const id = parseInt(req.params.id)
     const index = iceCreams.findIndex(iceCream => iceCream.id == id);
     
+    if(index === -1) {
+        res.status(404).json({'error': 'Oups... Detta id finns inte.'})
+    };
+
     const updatedIceCream = {
-        id: id,
-        ...req.body
+        ...req.body,
+        id: parseInt(id),
     };
     
     iceCreams.splice(index, 1, updatedIceCream );
@@ -74,13 +76,11 @@ app.delete('/api/ice-cream/:id', (req, res) => {
     const id = req.params.id;
     const index = iceCreams.findIndex(iceCream => iceCream.id == id);
 
-    /*
-    if(!id) {
-        res.status(200).json({'error': 'There is not an ice cream with this ID. Can not remove.'})
+    if(index === -1) {
+        res.status(404).json('This ice cream does not exist')
         return
     }
-    */
-
+    
     const deletedIceCream = iceCreams.splice(index, 1);
 
     fs.writeFile('iceCreams.json', JSON.stringify(iceCreams, null, 2), () => {
@@ -92,5 +92,5 @@ app.delete('/api/ice-cream/:id', (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });
