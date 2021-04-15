@@ -1,0 +1,168 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 8rem;
+    box-sizing: border-box;
+    font-family: 'Itim', cursive;
+    color: #112121;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+    background-color: #FFB9AD;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+}
+
+.logo {
+    font-family: 'Aladin', 'cursive';
+    letter-spacing: .1rem;
+    color: white;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    align-items: center;
+    padding: 5rem 10% 2rem 10%;
+}
+
+.main-content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* View: All ice creams */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10rem;
+    height: 15rem;
+    text-align: center;
+    margin: 2.5rem 2rem;
+}
+
+.background-image-square {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 70%;
+    width: 100%;
+    border-radius: 1.5rem;
+    background-color: #FFF6C5;
+    cursor: pointer;
+}
+
+.small-image {
+    position: absolute;
+    width: 150%;
+    bottom: .1rem;
+}
+
+/* View: Specific ice cream */
+.specific-product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+}
+
+.background-image-circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    background-color: #FFF6C5;
+}
+
+.large-image {
+    position: absolute;
+    width: 150%;
+}
+
+.product-info-container {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    padding-left: 4rem;
+    color: #6AC8F1;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8rem;
+    background-color: #FFDA90;
+}
+
+.button {
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: .5rem;
+    margin: 0 2rem;
+    box-shadow: inset 3px 3px 5px #F3C161, inset -2px -2px 4px #FFFAE1;
+    background-color: #FFF6C5;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    
+    font-family: 'Itim', cursive;
+    font-size: 1rem;
+    color: #112121;
+     
+    transition: ease-in-out .2s;
+}
+
+.button:hover {
+    width: 10rem;
+}
+
+
+/* Text */
+h2 {
+    font-family: 'Stylish', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.h2-small {
+    font-family: 'Stylish', sans-serif;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
