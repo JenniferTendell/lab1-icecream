@@ -2,7 +2,7 @@
 
 This is my first back-end project. I used NodeJS, Express and Nodemon to create this REST-API. I also designed and created a simple user interface for it. Feel free to check it out in your web browser!   
 
-:hourglass: Time frame: 2 weeks.
+:hourglass: 2 weeks.
 
 ### Functionality
 ( CRUD )
@@ -18,7 +18,7 @@ This is my first back-end project. I used NodeJS, Express and Nodemon to create 
 Run `npm i` and `npm start` in the terminal to build and start this project.
 
 
-:icecream: :icecream: :icecream:
+
 ## API
 If you want the default API back:
 
