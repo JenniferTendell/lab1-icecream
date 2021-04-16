@@ -19,22 +19,22 @@ app.get('/api/ice-cream/:id', (req, res) => {
     const id = req.params.id;
 
     const specificIceCream = iceCreams.find((iceCream) => {
-        return iceCream.id == id
+        return iceCream.id == id;
     });
 
     if(!specificIceCream) {
-        res.status(404).json({'error': 'Oups... Detta id finns inte.'})
+        res.status(404).json({'error': 'Oups... This id does not exist.'});
     };
 
-    res.status(200).json(specificIceCream)
+    res.status(200).json(specificIceCream);
 });
 
 // Add new ice cream
 app.post('/api/ice-cream', (req, res) => {
-    let newId = 0
+    let newId = 0;
     iceCreams.forEach((iceCream) => {
         if(iceCream.id > newId) {
-            newId = iceCream.id
+            newId = iceCream.id;
         };
     });
 
@@ -46,17 +46,17 @@ app.post('/api/ice-cream', (req, res) => {
     });
 
     fs.writeFile('iceCreams.json', JSON.stringify(iceCreams, null, 2), () => {
-        res.status(201).json(req.body)
-    })
+        res.status(201).json(req.body);
+    });
 });
 
 // Update existing ice cream
 app.put('/api/ice-cream/:id', (req, res) => {
-    const id = parseInt(req.params.id)
+    const id = parseInt(req.params.id);
     const index = iceCreams.findIndex(iceCream => iceCream.id == id);
     
     if(index === -1) {
-        res.status(404).json({'error': 'Oups... Detta id finns inte.'})
+        res.status(404).json({'error': 'Oups... This ice cream does not exist.'});
     };
 
     const updatedIceCream = {
@@ -68,7 +68,7 @@ app.put('/api/ice-cream/:id', (req, res) => {
 
     fs.writeFile('iceCreams.json', JSON.stringify(iceCreams, null, 2), () => {
         res.status(200).json(req.body);
-    })
+    });
 });
 
 // Delete ice cream
@@ -77,16 +77,15 @@ app.delete('/api/ice-cream/:id', (req, res) => {
     const index = iceCreams.findIndex(iceCream => iceCream.id == id);
 
     if(index === -1) {
-        res.status(404).json('This ice cream does not exist')
+        res.status(404).json('This ice cream does not exist');
         return
-    }
+    };
     
     const deletedIceCream = iceCreams.splice(index, 1);
 
     fs.writeFile('iceCreams.json', JSON.stringify(iceCreams, null, 2), () => {
-        res.status(200).json(deletedIceCream)
-    })
-    
+        res.status(200).json(deletedIceCream);
+    });  
 });
 
 
