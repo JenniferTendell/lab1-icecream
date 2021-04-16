@@ -3,14 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
-
 html {
     position: relative;
-    min-height: 100%;
+    height: 100%;
 }
 
 body {
-    margin: 0 0 8rem;
+    margin: 0;
     box-sizing: border-box;
     font-family: 'Itim', cursive;
     color: #112121;
@@ -41,8 +40,15 @@ header {
 /* MAIN */
 main {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 5rem 10% 2rem 10%;
+    margin: 0 10% 2rem 10%;
+    min-height: 50vh;
+}
+
+.header-transition {
+    position: absolute;
+    object-fit: cover; 
 }
 
 .main-content-container {
@@ -51,6 +57,7 @@ main {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
+    margin-top: 7rem;
 }
 
 /* View: All ice creams */
@@ -59,6 +66,7 @@ main {
     flex-direction: column;
     align-items: center;
     width: 10rem;
+    min-width: 7.5rem;
     height: 15rem;
     text-align: center;
     margin: 2.5rem 2rem;
@@ -114,23 +122,79 @@ main {
     color: #6AC8F1;
 }
 
+/* View: Add new ice cream */
+.form-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 40rem;
+    margin: 0 auto;
+}
+
+.image-container {
+    height: 15rem;
+    width: 15rem;
+    border: .5rem solid #FFF6C5;
+    border-radius: 1rem;
+}
+
+.new-ice-cream-form {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    margin: 2rem;
+}
+
+input {
+    border: .2rem solid #E5E5E5;
+    border-radius: .3rem;
+    padding: .3rem;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+.submit-button {
+    padding: .5rem 0;
+    background-color: #6AC8F1;
+    color: white;
+    border: none;
+    border-radius: .3rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.disabled-submit-button {
+    padding: .5rem 0;
+    background-color: #E5E5E5;
+    border: none;
+    outline: none;
+}
+
+
 /* FOOTER */
 footer {
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    height: 8rem;
+    padding: 2rem 0;
+    margin-top: 2rem;
     background-color: #FFDA90;
+}
+
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    max-width: 40rem;
+    justify-content: space-around;
 }
 
 .button {
     width: 9rem;
     height: 2.5rem;
     border-radius: .5rem;
-    margin: 0 2rem;
+    margin: .5rem 0;
     box-shadow: inset 3px 3px 5px #F3C161, inset -2px -2px 4px #FFFAE1;
     background-color: #FFF6C5;
     border-style: none;
@@ -152,7 +216,7 @@ footer {
 /* Text */
 h2 {
     font-family: 'Stylish', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 0;
 }
 
