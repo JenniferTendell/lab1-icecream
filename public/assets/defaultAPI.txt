@@ -1,0 +1,25 @@
+-- Default API --
+
+[
+    {
+    "id": 1,
+    "title": "Magnum Strawberry White",
+    "price": 24,
+    "description": "En perfekt kombination av sött och syrligt! Krämig jordgubbsglass med tunna strimmor av jordgubbssås – doppad i vit choklad.",
+    "image": "https://github.com/JenniferTendell/lab1-icecream/blob/master/public/assets/iceCreams/magnumStrawberryWhite.png?raw=true"
+    },
+    {
+        "id": 2,
+        "title": "Solero Exotic",
+        "price": 20,
+        "description": "Solero Exotic är tillbaka! Len vaniljglass med en swirl och överdrag av exotiska frukter. Läskande god!",
+        "image": "https://github.com/JenniferTendell/lab1-icecream/blob/master/public/assets/iceCreams/soleroExotic.png?raw=true"
+    },
+    {
+        "id": 3,
+        "title": "Sandwich",
+        "price": 18,
+        "description": "Sandwich kan man alltid lita på, en riktigt klassiker. Tiderna förändras, men inte den rena vaniljglassen mellan de goda chokladkexen.",
+        "image": "https://github.com/JenniferTendell/lab1-icecream/blob/master/public/assets/iceCreams/sandwich.png?raw=true"
+    }
+]
