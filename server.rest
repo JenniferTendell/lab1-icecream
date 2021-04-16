@@ -16,7 +16,7 @@ Content-Type: application/json
     "title": "Twister",
     "price": 12,
     "description": "En riktig barnfavorit! Njut av en glass med flertalet populära fruktsmaker såsom ananas, citron och jordgubb.",
-    "image": "https://asset-eu.unileversolutions.com/content/dam/unilever/heart/sweden/static_not_in-use_products_/product_only/ice_cream/out_of_home_ice_cream/heartbrand_glasspinne_twister_80_ml/8000920400470_twister-1209715-png.png.ulenscale.600x600.png"
+    "image": "https://github.com/JenniferTendell/lab1-icecream/blob/master/public/assets/iceCreams/twister.png?raw=true"
 }
 
 ###
@@ -29,7 +29,7 @@ Content-Type: application/json
         "title": "Piggelin",
         "price": 8,
         "description": "Härligt läskande slush med smak av favoriten Piggelin!",
-        "image": "https://asset-eu.unileversolutions.com/content/dam/unilever/heart/sweden/pack_shot/piggelin-1570534-png.png.ulenscale.600x600.png"
+        "image": "https://github.com/JenniferTendell/lab1-icecream/blob/master/public/assets/iceCreams/piggelin.png?raw=true"
 }
 
 
