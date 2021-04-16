@@ -200,7 +200,6 @@ function displayAddIceCreamForm() {
     const image = document.createElement('input');
     image.classList.add('input');
     image.placeholder = 'Bildadress (http://...)';
-    // On error....
     image.addEventListener('input', (e) => {
         imageContainer.src = e.target.value;
     });
