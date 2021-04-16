@@ -1,0 +1,76 @@
+
+
+/* TABLET */
+@media (max-width: 955px) {
+    /* MAIN */
+    /* View: Specific ice cream */
+    .background-image-circle {
+        width: 10rem;
+        height: 10rem;
+        margin-bottom: 3rem;
+    }
+
+    /* FOOTER */
+    .buttons-container {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .button {
+        width: 80%;
+        min-width: 6rem;
+    }
+
+    .button:hover {
+        width: 90%;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 475px) {
+    /* MAIN */
+    .main-content-container {
+        justify-content: center;
+        margin-top: 4rem;
+    }
+    /* View: Specific ice cream */
+    .product-info-container {
+        padding-left: 0rem;
+        width: 90%;
+        text-align: center;
+    }
+
+    .h2-small {
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* View: Add new ice cream */
+    .form-container {
+        width: 100%;
+    }
+
+    .image-container { 
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .new-ice-cream-form {
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+     /* FOOTER */
+    .button {
+        width: 100%;
+        min-width: 6rem;
+    }
+
+    .button:hover {
+        width: 100%;
+    }
+}
